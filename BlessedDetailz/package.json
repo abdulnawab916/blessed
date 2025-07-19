@@ -1,0 +1,17 @@
+{
+  "name": "blesseddetailz",
+  "version": "1.0.0",
+  "description": "A frontend web application for car detailing services",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "cd frontend && npm start",
+    "install:all": "cd frontend && npm install",
+    "test": "cd frontend && npm test"
+  },
+  "keywords": ["frontend", "typescript", "react"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
