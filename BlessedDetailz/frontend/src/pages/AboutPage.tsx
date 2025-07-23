@@ -5,29 +5,33 @@ const AboutPage: React.FC = () => {
   return (
     <section id="about" className="about-page">
       <div className="about-container">
-        <h2>About Blessed Detailz</h2>
-        <div className="about-content">
-          <div className="about-text">
-            <p>
-              Welcome to Blessed Detailz, where passion meets precision in automotive care. 
-              We've been serving our community with professional car detailing services for over 5 years.
-            </p>
-            <p>
-              Our team of certified detailers uses only the highest quality products and 
-              state-of-the-art equipment to ensure your vehicle receives the care it deserves.
-            </p>
-            <div className="features">
-              <div className="feature">
-                <span className="feature-icon">⭐</span>
-                <h4>5+ Years Experience</h4>
-              </div>
-              <div className="feature">
-                <span className="feature-icon">🔧</span>
-                <h4>Professional Equipment</h4>
-              </div>
-              <div className="feature">
-                <span className="feature-icon">💯</span>
-                <h4>100% Satisfaction</h4>
+        <h2>The Man Behind BlessedDetailz</h2>
+        
+        {/* CEO Section */}
+        <div className="ceo-section">
+          <div className="ceo-container">
+            <div className="ceo-image">
+              <img 
+                src="/aboutJunaid.png" 
+                alt="CEO of Blessed Detailz" 
+                className="ceo-photo"
+              />
+            </div>
+            <div className="ceo-bio">
+              <h3 className="ceo-name">Junaid Barak</h3>
+              <p className="ceo-title">The Founder</p>
+              <div className="ceo-description">
+                <p>
+                  Junaid, the founder of BlessedDetailz, is both a skilled detailer and a driven entrepreneur. 
+                  With over a year of hands-on experience in the industry, he launched BlessedDetailz with a 
+                  clear mission: to deliver high-quality car care that goes beyond expectations.
+                </p>
+                <p>
+                  What started as a modest mobile detailing service has quickly grown into a trusted name 
+                  in the suburban Sacramento community, proudly serving hundreds of satisfied clients. 
+                  Junaid's dedication to quality, precision, and customer satisfaction continues to fuel 
+                  the success of BlessedDetailz.
+                </p>
               </div>
             </div>
           </div>
