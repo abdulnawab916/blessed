@@ -1,6 +1,6 @@
 .reviews-page {
   padding: clamp(3rem, 8vw, 5rem) 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #546e7a 0%, #37474f 100%);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -57,7 +57,7 @@
   top: -10px;
   left: 20px;
   font-size: 4rem;
-  color: #667eea;
+  color: #546e7a;
   font-family: serif;
   line-height: 1;
 }
@@ -80,7 +80,7 @@
 .review-author {
   display: block;
   font-weight: 600;
-  color: #667eea;
+  color: #546e7a;
   font-size: clamp(0.9rem, 2vw, 1rem);
   text-align: right;
 }

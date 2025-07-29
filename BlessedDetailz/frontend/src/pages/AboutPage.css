@@ -27,7 +27,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #3498db, #2980b9);
+  background: linear-gradient(90deg, #546e7a, #37474f);
   border-radius: 2px;
 }
 
@@ -140,7 +140,7 @@
 .ceo-title {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #3498db;
+  color: #546e7a;
   margin: 0 0 40px 0;
   text-transform: uppercase;
   letter-spacing: 1px;

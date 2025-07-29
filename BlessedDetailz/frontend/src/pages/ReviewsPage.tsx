@@ -9,21 +9,21 @@ const ReviewsPage: React.FC = () => {
         <div className="reviews-list">
           <div className="review-card">
             <p className="review-text">
-              "Absolutely amazing service! My car looks brand new. Highly recommend Blessed Detailz!"
+              "Blessed detailz did an amazing job on my car—the interior looked spotless and he was on time and professional. Highly recommend if you want your car looking fresh."
             </p>
-            <span className="review-author">- Sarah L.</span>
+            <span className="review-author">- Asif</span>
           </div>
           <div className="review-card">
             <p className="review-text">
-              "Professional, friendly, and attention to detail is unmatched. Will be back for sure."
+              "Super impressed with the service! My car smelled great, and all the stains were gone. The detailer was friendly and worked quickly. I'll be telling my friends about him."
             </p>
-            <span className="review-author">- Mike D.</span>
+            <span className="review-author">- Zarmina</span>
           </div>
           <div className="review-card">
             <p className="review-text">
-              "Best detailing experience I've ever had. Booking was easy and the results were fantastic."
+              "Blessed Detailz made my Honda Civic's paint look like I just got it off the lot. Seriously impressed with the work they did!"
             </p>
-            <span className="review-author">- Emily R.</span>
+            <span className="review-author">- Abdul</span>
           </div>
         </div>
       </div>
