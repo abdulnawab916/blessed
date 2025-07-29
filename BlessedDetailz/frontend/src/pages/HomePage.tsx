@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './HomePage.css';
 import { BookingService } from '../services/bookingService';
 import { BookingFormData } from '../services/emailService';
+import MaintenanceCarousel from '../components/MaintenanceCarousel';
 
 const HomePage: React.FC = () => {
   const [formData, setFormData] = useState<BookingFormData>({
@@ -279,28 +280,34 @@ const HomePage: React.FC = () => {
           <div className="maintenance-notice">
             <p><strong>IMPORTANT:</strong> BEFORE ENROLLING IN THE MAINTENANCE PLAN YOU MUST RECEIVE A FULL DETAIL</p>
           </div>
-          <div className="services-grid">
-            <div className="service-card maintenance">
-              <h4>Sedan Full Detail - Biweekly</h4>
-              <p>Regular maintenance every 2 weeks</p>
-              <span className="price">$95</span>
-            </div>
-            <div className="service-card maintenance">
-              <h4>Sedan Full Detail - Monthly</h4>
-              <p>Regular maintenance every month</p>
-              <span className="price">$100</span>
-            </div>
-            <div className="service-card maintenance">
-              <h4>SUV/Truck Full Detail - Biweekly</h4>
-              <p>Regular maintenance every 2 weeks</p>
-              <span className="price">$105</span>
-            </div>
-            <div className="service-card maintenance">
-              <h4>SUV/Truck Full Detail - Monthly</h4>
-              <p>Regular maintenance every month</p>
-              <span className="price">$120</span>
-            </div>
-          </div>
+          <MaintenanceCarousel 
+            plans={[
+              {
+                id: 'sedan-biweekly',
+                title: 'Sedan Full Detail - Biweekly',
+                description: 'Regular maintenance every 2 weeks',
+                price: '$95'
+              },
+              {
+                id: 'sedan-monthly',
+                title: 'Sedan Full Detail - Monthly',
+                description: 'Regular maintenance every month',
+                price: '$100'
+              },
+              {
+                id: 'suv-biweekly',
+                title: 'SUV/Truck Full Detail - Biweekly',
+                description: 'Regular maintenance every 2 weeks',
+                price: '$105'
+              },
+              {
+                id: 'suv-monthly',
+                title: 'SUV/Truck Full Detail - Monthly',
+                description: 'Regular maintenance every month',
+                price: '$120'
+              }
+            ]}
+          />
         </div>
 
         <div className="established-info">

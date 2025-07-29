@@ -23,6 +23,14 @@ export interface EmailData {
 }
 
 export class EmailService {
+  // Add this helper function at the top of the class
+  private static formatDateWithoutTimezone(dateString: string): string {
+    // Parse the date string and create a date in local timezone
+    const [year, month, day] = dateString.split('-').map(Number);
+    const date = new Date(year, month - 1, day); // month is 0-indexed
+    return date.toLocaleDateString();
+  }
+
   private static formatBookingEmail(formData: BookingFormData): EmailData {
     const serviceTypeLabels: { [key: string]: string } = {
       'sedan-exterior': 'Sedan Exterior Service - $60',
@@ -105,7 +113,7 @@ export class EmailService {
               <h3>📅 Appointment Details</h3>
               <div class="field">
                 <span class="label">Preferred Date:</span>
-                <span class="value">${new Date(formData.preferredDate).toLocaleDateString()}</span>
+                <span class="value">${this.formatDateWithoutTimezone(formData.preferredDate)}</span>
               </div>
               <div class="field">
                 <span class="label">Preferred Time:</span>
@@ -139,7 +147,7 @@ export class EmailService {
               <div class="highlight">
                 <strong>Customer:</strong> ${formData.firstName} ${formData.lastName}<br>
                 <strong>Service:</strong> ${serviceTypeLabels[formData.serviceType] || formData.serviceType}<br>
-                <strong>Date:</strong> ${new Date(formData.preferredDate).toLocaleDateString()}<br>
+                <strong>Date:</strong> ${this.formatDateWithoutTimezone(formData.preferredDate)}<br>
                 <strong>Time:</strong> ${timeSlotLabels[formData.preferredTime] || formData.preferredTime}<br>
                 <strong>Location:</strong> ${formData.address}
               </div>
@@ -172,7 +180,7 @@ Vehicle Type: ${formData.vehicleType}
 Service Requested: ${serviceTypeLabels[formData.serviceType] || formData.serviceType}
 
 APPOINTMENT DETAILS:
-Preferred Date: ${new Date(formData.preferredDate).toLocaleDateString()}
+Preferred Date: ${this.formatDateWithoutTimezone(formData.preferredDate)}
 Preferred Time: ${timeSlotLabels[formData.preferredTime] || formData.preferredTime}
 
 LOCATION INFORMATION:
@@ -184,7 +192,7 @@ ${formData.specialRequests ? `SPECIAL REQUESTS: ${formData.specialRequests}` : '
 BOOKING SUMMARY:
 Customer: ${formData.firstName} ${formData.lastName}
 Service: ${serviceTypeLabels[formData.serviceType] || formData.serviceType}
-Date: ${new Date(formData.preferredDate).toLocaleDateString()}
+Date: ${this.formatDateWithoutTimezone(formData.preferredDate)}
 Time: ${timeSlotLabels[formData.preferredTime] || formData.preferredTime}
 Location: ${formData.address}
 
@@ -234,7 +242,7 @@ Next Steps:
         customer_phone: formData.phone,
         vehicle_type: formData.vehicleType,
         service_type: formData.serviceType,
-        preferred_date: new Date(formData.preferredDate).toLocaleDateString(),
+        preferred_date: this.formatDateWithoutTimezone(formData.preferredDate),
         preferred_time: formData.preferredTime,
         vehicle_location: formData.vehicleLocation,
         address: formData.address,
@@ -284,7 +292,8 @@ Next Steps:
 
     // Date validation
     if (formData.preferredDate) {
-      const selectedDate = new Date(formData.preferredDate);
+      const [year, month, day] = formData.preferredDate.split('-').map(Number);
+      const selectedDate = new Date(year, month - 1, day);
       const today = new Date();
       today.setHours(0, 0, 0, 0);
       

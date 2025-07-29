@@ -1,7 +1,6 @@
 .reviews-page {
-  padding: clamp(3rem, 8vw, 5rem) 0;
+  padding: 2rem 0 4rem 0;
   background: linear-gradient(135deg, #546e7a 0%, #37474f 100%);
-  min-height: 100vh;
   display: flex;
   align-items: center;
 }
@@ -17,7 +16,7 @@
   font-size: clamp(2.5rem, 6vw, 3.5rem);
   font-weight: 700;
   color: white;
-  margin-bottom: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 2rem;
   position: relative;
 }
 
@@ -37,7 +36,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .review-card {
@@ -88,7 +87,7 @@
 /* Responsive design */
 @media (max-width: 768px) {
   .reviews-page {
-    padding: 3rem 0;
+    padding: 1.5rem 0 3rem 0;
   }
   
   .reviews-container {
@@ -98,7 +97,7 @@
   .reviews-list {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
   
   .review-card {
@@ -113,7 +112,7 @@
 
 @media (max-width: 480px) {
   .reviews-page {
-    padding: 2rem 0;
+    padding: 1rem 0 2.5rem 0;
   }
   
   .reviews-container {

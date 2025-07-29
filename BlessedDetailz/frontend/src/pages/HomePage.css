@@ -155,42 +155,6 @@
   margin: 0 auto;
 }
 
-/* Special grid layout for maintenance plans to center the last card */
-.service-category:has(.maintenance) .services-grid {
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: 
-    "sedan1 sedan2"
-    "suv1 suv2";
-}
-
-.service-category:has(.maintenance) .service-card:nth-child(1) {
-  grid-area: sedan1;
-}
-
-.service-category:has(.maintenance) .service-card:nth-child(2) {
-  grid-area: sedan2;
-}
-
-.service-category:has(.maintenance) .service-card:nth-child(3) {
-  grid-area: suv1;
-}
-
-.service-category:has(.maintenance) .service-card:nth-child(4) {
-  grid-area: suv2;
-}
-
-/* Responsive adjustments for maintenance grid */
-@media (max-width: 768px) {
-  .service-category:has(.maintenance) .services-grid {
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-      "card1"
-      "card2"
-      "card3"
-      "card4";
-  }
-}
-
 .service-card {
   background: white;
   padding: 2rem;
@@ -208,12 +172,6 @@
 }
 
 .service-card.premium {
-  background: linear-gradient(135deg, #546e7a 0%, #37474f 100%);
-  color: white;
-  border: 2px solid #263238;
-}
-
-.service-card.maintenance {
   background: linear-gradient(135deg, #546e7a 0%, #37474f 100%);
   color: white;
   border: 2px solid #263238;
@@ -269,8 +227,7 @@
   margin-top: 1rem;
 }
 
-.service-card.premium .price,
-.service-card.maintenance .price {
+.service-card.premium .price {
   color: white;
   background: rgba(255, 255, 255, 0.2);
   padding: 0.5rem 1rem;
