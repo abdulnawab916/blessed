@@ -277,8 +277,8 @@ Next Steps:
     if (!formData.agreement) errors.push('You must agree to the terms and conditions');
 
     // Phone validation (basic)
-    const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-    if (formData.phone && !phoneRegex.test(formData.phone.replace(/[\s\-\(\)]/g, ''))) {
+    const phoneRegex = /^[+]?[1-9][\d]{0,15}$/;
+    if (formData.phone && !phoneRegex.test(formData.phone.replace(/[\s\-()]/g, ''))) {
       errors.push('Please enter a valid phone number');
     }
 
